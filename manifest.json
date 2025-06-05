@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "IRCTC Tatkal Auto Fill",
+  "version": "1.0",
+  "description": "Auto-fill passenger information for IRCTC Tatkal ticket booking",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://*.irctc.co.in/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.irctc.co.in/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "IRCTC Auto Fill"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["content.js"],
+      "matches": ["*://*.irctc.co.in/*"]
+    }
+  ]
+}

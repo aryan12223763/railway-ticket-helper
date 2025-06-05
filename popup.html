@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            width: 350px;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .header h2 {
+            margin: 0;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(255,255,255,0.5);
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+        }
+        
+        #saveBtn {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        #fillBtn {
+            background: #FF6B35;
+            color: white;
+        }
+        
+        #clearBtn {
+            background: #f44336;
+            color: white;
+        }
+        
+        .status {
+            margin-top: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .success {
+            background: rgba(76,175,80,0.8);
+        }
+        
+        .error {
+            background: rgba(244,67,54,0.8);
+        }
+        
+        .passenger-section {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .passenger-header {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>🚂 IRCTC Auto Fill</h2>
+        <p>Tatkal Booking Assistant</p>
+    </div>
+    
+    <div class="passenger-section">
+        <div class="passenger-header">Passenger 1 Details</div>
+        
+        <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" placeholder="Enter full name">
+        </div>
+        
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" placeholder="Enter age" min="1" max="120">
+        </div>
+        
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select id="gender">
+                <option value="">Select Gender</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+                <option value="T">Transgender</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="berth">Berth Preference:</label>
+            <select id="berth">
+                <option value="">No Preference</option>
+                <option value="LB">Lower Berth</option>
+                <option value="MB">Middle Berth</option>
+                <option value="UB">Upper Berth</option>
+                <option value="SL">Side Lower</option>
+                <option value="SU">Side Upper</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" placeholder="10-digit mobile number" maxlength="10">
+        </div>
+    </div>
+    
+    <div class="button-group">
+        <button id="saveBtn">💾 Save</button>
+        <button id="fillBtn">⚡ Fill Form</button>
+        <button id="clearBtn">🗑️ Clear</button>
+    </div>
+    
+    <div class="button-group">
+        <button id="debugBtn" style="background: #2196F3; color: white; width: 100%;">🔍 Debug Form</button>
+    </div>
+    
+    <div id="status"></div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
